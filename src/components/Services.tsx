@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import { BG, TEXT, MUTED, META, ACCENT, service1, service2, service3 } from "@/constants";
 
 const services = [
@@ -35,9 +36,7 @@ export default function Services() {
                 <span style={{ fontFamily: "Antonio, sans-serif", color: TEXT, fontSize: 20, fontWeight: 700, letterSpacing: 0.5 }} className="uppercase">
                   {s.label}
                 </span>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke={ACCENT} strokeWidth="2">
-                  <path d="M5 10h10M12 7l3 3-3 3" />
-                </svg>
+                <ArrowRight size={20} color={ACCENT} strokeWidth={2} />
               </div>
             </div>
           ))}

@@ -1,3 +1,4 @@
+import { ChevronDown, Star } from "lucide-react";
 import { ACCENT, BG, TEXT, MUTED, hero_mosaic, hero_room } from "@/constants";
 
 const avatars = [
@@ -53,9 +54,7 @@ export default function Hero() {
                 </p>
                 <div className="flex items-center gap-1 mt-1">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="16" height="16" viewBox="0 0 14 14" fill={ACCENT}>
-                      <path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.1l-3.7 2.2.7-4.1-3-2.9 4.2-.7z" />
-                    </svg>
+                    <Star key={i} size={16} color={ACCENT} fill={ACCENT} />
                   ))}
                   <span style={{ fontFamily: "Noto Sans, sans-serif", color: MUTED, fontSize: 13 }} className="ml-1">5.0 on Google</span>
                 </div>
@@ -66,9 +65,7 @@ export default function Hero() {
 
         <div className="flex items-center gap-2 py-4">
           <span style={{ fontFamily: "Noto Sans, sans-serif", color: MUTED, fontSize: 12, fontWeight: 700, letterSpacing: 2 }}>SCROLL</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke={MUTED} strokeWidth="2">
-            <path d="M8 2v12M2 10l6 6 6-6" />
-          </svg>
+          <ChevronDown size={16} color={MUTED} strokeWidth={2} />
         </div>
       </div>
 

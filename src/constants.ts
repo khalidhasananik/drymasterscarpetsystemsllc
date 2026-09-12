@@ -3,7 +3,7 @@ export const DARK = "#1a1f29";
 export const BG = "#f7f6f1";
 export const BG2 = "#eeece1";
 export const TEXT = "#1f242e";
-export const MUTED = "#8a8880";
+export const MUTED = "#6f6d64";
 export const META = "#b7b08d";
 
 export const hero_mosaic = "https://images.unsplash.com/photo-1580256081112-e49377338b7f?w=600&h=480&fit=crop&auto=format";

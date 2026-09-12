@@ -1,3 +1,4 @@
+import { Star } from "lucide-react";
 import { DARK, ACCENT, META, MUTED, TEXT, tile_install } from "@/constants";
 
 const reviews = [
@@ -35,9 +36,7 @@ export default function Testimonial() {
                 <div key={i}>
                   <div className="flex items-center gap-1 mb-3">
                     {[...Array(5)].map((_, j) => (
-                      <svg key={j} width="14" height="14" viewBox="0 0 14 14" fill={ACCENT}>
-                        <path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.1l-3.7 2.2.7-4.1-3-2.9 4.2-.7z" />
-                      </svg>
+                      <Star key={j} size={14} color={ACCENT} fill={ACCENT} />
                     ))}
                   </div>
                   <blockquote style={{ fontFamily: "Noto Sans, sans-serif", color: MUTED, fontSize: 15, lineHeight: 1.8 }} className="mb-4">
