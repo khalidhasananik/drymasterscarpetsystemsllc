@@ -1,5 +1,6 @@
-import drymastersLogo from "@/imports/drymasterscarpetsystemsllc-logo.png";
 import { TEXT, MUTED, ACCENT } from "@/constants";
+
+const drymastersLogo = "/images/drymasterslogo.png";
 
 export default function Footer() {
   return (

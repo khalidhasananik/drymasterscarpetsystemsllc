@@ -1,5 +1,9 @@
 {
+  "title": "Dry Masters Carpet Systems LLC",
   "description": "This web application allows users to effortlessly recreate and customize web pages based on provided designs, enhancing their web development process.",
+  "icons": {
+    "icon": "/images/drymasterslogo.png"
+  },
   "robots": {
     "index": false
   },

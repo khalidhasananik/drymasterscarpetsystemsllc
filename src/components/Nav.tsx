@@ -1,6 +1,7 @@
 import { useState } from "react";
-import drymastersLogo from "@/imports/drymasterscarpetsystemsllc-logo.png";
 import { BG, TEXT, MUTED, navLinks } from "@/constants";
+
+const drymastersLogo = "/images/drymasterslogo.png";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
