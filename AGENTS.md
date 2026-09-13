@@ -36,7 +36,9 @@ This project uses **Tailwind CSS v4** through the `@tailwindcss/vite` plugin con
 
 ## Metadata / SEO
 
-`index.html` holds all `<head>` metadata directly (title, description, `og:*`, `twitter:*`) — there is no build-time injection step. Update it by hand when copy, the preview image, or the deployed URL changes. `public/robots.txt` and the `<meta name="robots">` tag currently block indexing (`noindex, nofollow` / `Disallow: /`) because the Vercel URL is a staging deployment; flip both when the site is ready to go live at its production domain.
+`index.html` holds all `<head>` metadata directly (title, description, `og:*`, `twitter:*`) — there is no build-time injection step. Update it by hand when copy, the preview image, or the deployed URL changes. The `<meta name="robots">` tag currently blocks indexing (`noindex, nofollow`) because the Vercel URL is a staging deployment; flip it when the site is ready to go live at its production domain.
+
+`public/robots.txt` disallows `User-agent: *` (search engines) but explicitly `Allow: /` for social link-preview crawlers (`facebookexternalhit`, `Facebot`, `Twitterbot`, `LinkedInBot`, `Pinterest`/`Pinterestbot`, `WhatsApp`, `Slackbot`, `Discordbot`, `TelegramBot`) — a blanket `Disallow: /` blocks those crawlers too, which silently breaks link previews in Facebook/Instagram/Messenger/WhatsApp/etc. even when the OG tags themselves are correct (Meta's Sharing Debugger reports this as a 403/robots.txt block). Keep this allowlist in sync if new social platforms need previews, and don't re-blanket-disallow it without re-adding the crawler exceptions.
 
 ## Deployment
 
