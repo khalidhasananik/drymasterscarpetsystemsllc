@@ -54,6 +54,7 @@ type FigmaSiteConfiguration = {
   }
   openGraph?: {
     image?: string
+    url?: string
   }
   analytics?: {
     googleAnalyticsId?: string
@@ -84,7 +85,12 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
   const title = config.title ?? "Figma Make App"
   const description = config.description ?? ''
   const favicon = config.icons?.icon ?? ''
-  const socialImage = config.openGraph?.image ?? ''
+  const socialUrl = config.openGraph?.url ?? ''
+  const rawSocialImage = config.openGraph?.image ?? ''
+  const socialImage =
+    rawSocialImage && socialUrl && rawSocialImage.startsWith('/')
+      ? `${socialUrl.replace(/\/$/, '')}${rawSocialImage}`
+      : rawSocialImage
   const language = sanitizeHtmlValue(config.language) || 'en'
   const googleAnalyticsId = sanitizeHtmlValue(config.analytics?.googleAnalyticsId)
   const headStart = config.customScripts?.headStart ?? ''
@@ -145,6 +151,9 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
             { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' }, injectTo: 'head' },
             { tag: 'meta', attrs: { name: 'twitter:image', content: socialImage }, injectTo: 'head' },
           )
+        }
+        if (socialUrl) {
+          tags.push({ tag: 'meta', attrs: { property: 'og:url', content: socialUrl }, injectTo: 'head' })
         }
 
         if (googleAnalyticsId) {
